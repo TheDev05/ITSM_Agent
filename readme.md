@@ -1,6 +1,6 @@
 # ITSM Agent
 
-This project implements an **intelligent ITSM assistant** using **LangGraph**, **LangChain MCP**, **Redis**, **Guardrails** and **Streamlit**.
+This project implements an **intelligent ITSM assistant** using **LangGraph**, **LangChain**, **MCP**, **Redis**, **Guardrails** and **Streamlit**.
 
 It supports **hybrid workflows** with:
 - **Local tools** → session handling, memory, RAG knowledge retrieval
@@ -92,4 +92,5 @@ This ITSM agent combines multiple cutting-edge technologies:
 - **Redis Storage**: Fast session and state management
 - **RAG Knowledge Base**: Context-aware responses from documentation
 - **Streamlit Interface**: User-friendly chat experience
+
 - **Memory Persistence**: Conversations survive application restarts
