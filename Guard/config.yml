@@ -1,0 +1,53 @@
+rails:
+  config:
+    sensitive_data_detection:
+      input: 
+        entities:
+          - PERSON
+          - EMAIL_ADDRESS
+          - CREDIT_CARD
+          - IP_ADDRESS
+          - PHONE_NUMBER
+          - US_BANK_NUMBER
+          - US_DRIVER_LICENSE
+          - US_PASSPORT
+          - US_SSN
+          - IN_PAN
+          - IN_AADHAAR
+          - IN_VEHICLE_REGISTRATION
+          - IN_VOTER
+          - IN_PASSPORT
+        confidence_threshold: 0.7 
+        mask_format: "<{entity_type}>"
+  input:
+    flows:
+      - self check input
+      - mask sensitive data on input
+      # - detect sensitive data on input 
+  config:
+    sensitive_data_detection:
+      output:
+        entities:
+          - PERSON
+          - EMAIL_ADDRESS
+          - CREDIT_CARD
+          - IP_ADDRESS
+          - PHONE_NUMBER
+          - US_BANK_NUMBER
+          - US_DRIVER_LICENSE
+          - US_PASSPORT
+          - US_SSN
+          - IN_PAN
+          - IN_AADHAAR
+          - IN_VEHICLE_REGISTRATION
+          - IN_VOTER
+          - IN_PASSPORT
+        confidence_threshold: 0.7 
+        mask_format: "<{entity_type}>"
+  output:
+    flows:
+      - self check output
+      - mask sensitive data on output 
+      # - detect sensitive data on input 
+
+

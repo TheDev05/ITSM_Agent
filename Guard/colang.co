@@ -1,0 +1,11 @@
+define flow self check input
+  $allowed = execute self_check_input
+
+  if not $allowed
+    bot refuse to respond
+    stop
+
+define flow mask sensitive data on input
+  if $sensitive_data_detected
+    $user_message = mask_sensitive_data($user_message)
+    bot "I've anonymized some sensitive information in your message to protect your privacy. Let me help you with your request."

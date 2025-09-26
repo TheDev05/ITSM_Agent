@@ -1,0 +1,32 @@
+prompts:
+  - task: self_check_input
+    content: |
+
+      User message: {{ user_input }}
+
+      Rules: 
+      - Allow normal Hi, Hello, Thanks, greetings etc in conversations
+      - Normal conversation (acknowledgements, casual replies, greetings, general small talk, conversation related to last message etc) should **not** be blocked even if not strictly IT.
+
+      Block any Non-IT topics
+    
+      if non - IT topics, block them, else allow
+      - If YES(IT topics ) : Answer "No" (do not block)
+      - If NO(Non-IT topics): Answer "Yes" (block it)
+
+      Answer:
+
+  - task: self_check_output
+    content: |
+      Check if the bot response is appropriate.
+
+      The response should be blocked if it contains:
+      - Abusive or offensive language
+      - Inappropriate content
+
+      Bot response: "{{ bot_response }}"
+
+      Should this response be blocked?
+      Answer Yes or No:
+
+      Answer:
